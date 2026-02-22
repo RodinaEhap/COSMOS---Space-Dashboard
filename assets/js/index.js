@@ -1,3 +1,13 @@
+//===============================================sideBarToggle!''===============================================
+const sideBarToggle = document.getElementById("sidebar-toggle");
+const sidebar = document.getElementById("sidebar"); 
+sideBarToggle.addEventListener("click", () => {
+sidebar.classList.toggle("sidebar-open");
+});
+document.addEventListener("click", (e) => { 
+if(!sideBarToggle.contains(e.target)&&!sidebar.contains(e.target))
+    if(sidebar.classList.contains("sidebar-open")) sidebar.classList.remove("sidebar-open"); 
+});
 //===============================================navigation===============================================
 const navLinks = document.querySelectorAll("nav [data-section]");
 const sections = document.querySelectorAll("section[data-section]");
